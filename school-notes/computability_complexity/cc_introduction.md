@@ -9,10 +9,10 @@ There are 4 models of computation covered in this course
       - Regular and Nonregular Automata
   2. [[pa_home | Pushdowns Automata]]
       - Algorithms w/ stack data structure.
-      - Pushdown Automata (PDA)
-      - Context-Free Grammars (CFG)
-      - Converting PDA to CFG
+      - Pushdown Automata (PDA).
+      - Context-Free Grammars (CFG).
+      - Converting PDA to CFG.
   3. Turing Machines
-      - The halting problem and undecidability
+      - The halting problem and undecidability.
   4. Polynomial-Time Algorithms
-      - computational complexity and NP-completeness
+      - Computational complexity and NP-completeness.

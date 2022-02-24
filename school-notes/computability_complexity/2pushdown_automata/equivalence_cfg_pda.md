@@ -1,6 +1,8 @@
 # Equivalence of CFG and PDA
+##### Computability and Complexity
+###### Feburary 17th, 2022
 #PDA
-###### Lecture 12 (02/17/2022)
+
 ---
 ###### [[pa_home | unit homepage]]
 

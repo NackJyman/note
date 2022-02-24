@@ -18,11 +18,11 @@ Two main modules of this unit
 - Pushdown Automata (PDA)
 	- Manipulates a Stack
 
-$$ S \rightarrow LC | AR$$
-$$ L \rightarrow aLb | \epsilon$$
-$$ R \rightarrow bRc | \epsilon$$
-$$ A \rightarrow Aa | \epsilon$$
-$$ C \rightarrow Cc | \epsilon$$
+$$S \rightarrow LC | AR$$
+$$L \rightarrow aLb | \epsilon$$
+$$R \rightarrow bRc | \epsilon$$
+$$A \rightarrow Aa | \epsilon$$
+$$C \rightarrow Cc | \epsilon$$
 
 Capitals are typically varables
 
@@ -118,6 +118,8 @@ The language of this grammar is $$\{0^n1^n \ \vert \ n \ge 0\}$$
 ```ad-example
 title: $CFG$ to describe properly nested parentheses.
 $$ S \rightarrow (S) | SS | \epsilon$$
+
+---
 This grammar generates all strings of properly nested parentheses.
 - $S \Rightarrow (S) \Rightarrow ()$
 - $S \Rightarrow (S) \Rightarrow (SS) \Rightarrow (()S) \Rightarrow (()())$
@@ -149,7 +151,7 @@ T & \rightarrow & T \times F \ \vert \ F\\
 F & \rightarrow & (E) \ \vert \ N\\
 N & \rightarrow & NN \ \vert \ 0 \ \vert \ 1 \ \vert \ 2 \ \vert \ 3 \ \vert \ 4 \ \vert \ 5 \ \vert \ 6 \ \vert \ 7 \ \vert \ 8 \ \vert \ 9
 \end{array}$$
-
+---
 This example can generate most arithemtric equations:
 $$(12 + 8) \times 66$$
 $$2020 + (4200 \times 30)$$
@@ -160,6 +162,8 @@ $$87 \times ((33 + ((12 + 7) \times 99)) + 47)$$
 title: $CFG$ for $A = \{a^n b^m \ \vert \ n < m \}$
 $A = \{a^n b^m \ \vert \ n < m \}$
 $$ S \rightarrow aSb \ \vert \ Sb \ \vert \ b$$
+
+---
 
 $$\begin{array}{rcl}
 S & \Rightarrow & aSb & & S & \Rightarrow & aSb \\
@@ -180,6 +184,8 @@ $$L \rightarrow aLc \ | \ \epsilon$$
 $$R \rightarrow bRc \ | \ \epsilon$$
 $$A \rightarrow Aa \ | \ \epsilon$$
 $$C \rightarrow Cc \ | \ \epsilon$$
+
+---
 
 $$\begin{array}{rcl}
 S & \Rightarrow & LC & & S & \Rightarrow & AR \\
