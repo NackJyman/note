@@ -27,7 +27,7 @@ The TM has a transition function telling what to do based on what the tape head 
 ---
 
 ##### Pseudocode/Informal description of a TM that accepts
-###### $$\{w \in {0, 1} * | w \text{ is a palindrome}\}.$$
+###### $$\{w \in \{0, 1\}^* | w \text{ is a palindrome}\}.$$
 1. If the current cell is blank, ACCEPT. // even length palindrome. 
 Remember the symbol in the current cell and erase it with a blank symbol.
 2. Scan to the right until a blank symbol is found. 

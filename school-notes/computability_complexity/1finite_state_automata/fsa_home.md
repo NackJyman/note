@@ -1,11 +1,9 @@
-# Computability and Complexity Homepage
-## Finite State Automata
----
+# Finite State Automata
+##### Unit one of Computability and Complexity
 ###### [[cc_introduction| course homepage]]
-#### Unit one of Course
+---
 
 Lessons:
-
 ### The Finite Automata
 - [[deterministic_finite_automata | Deterministic Finite Automata (DFA)]]
 - [[nondeterministic_finite_automata | Nondeterministic Finite Automata (NFA)]]

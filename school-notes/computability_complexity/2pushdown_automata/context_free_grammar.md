@@ -18,11 +18,11 @@ Two main modules of this unit
 - Pushdown Automata (PDA)
 	- Manipulates a Stack
 
-$$S \rightarrow LC | AR$$
-$$L \rightarrow aLb | \epsilon$$
-$$R \rightarrow bRc | \epsilon$$
-$$A \rightarrow Aa | \epsilon$$
-$$C \rightarrow Cc | \epsilon$$
+$$S \rightarrow LC \ | \ AR$$
+$$L \rightarrow aLb \ | \ \epsilon$$
+$$R \rightarrow bRc \ | \ \epsilon$$
+$$A \rightarrow Aa \ | \ \epsilon$$
+$$C \rightarrow Cc \ | \ \epsilon$$
 
 Capitals are typically varables
 

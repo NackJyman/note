@@ -12,7 +12,7 @@ There are 4 models of computation covered in this course
       - Pushdown Automata (PDA).
       - Context-Free Grammars (CFG).
       - Converting PDA to CFG.
-  3. Turing Machines
+  3. [[tm_home | Turing Machines]]
       - The halting problem and undecidability.
   4. Polynomial-Time Algorithms
       - Computational complexity and NP-completeness.
