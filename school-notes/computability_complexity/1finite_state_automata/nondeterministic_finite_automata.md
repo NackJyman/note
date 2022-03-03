@@ -53,11 +53,8 @@ $$\delta'(q,a) = ⋃_{s \in E(q)} \delta(s,a)$$
 
 for all $q \in Q$ and $a \in \Sigma$. Then $\delta'(q,a)$ is the set of all states that can be reached from $q$ by taking $\epsilon$-transitions and then an $a$-transition
 
-```ad-hint
-title: Theorem
-
-##### "Every NFA has an equivalent DFA"
-```
+>#### Theorem
+>###### "Every NFA has an equivalent DFA"
 
 Proof:
 Let $N = (Q,\Sigma,\delta_A,q_0,F)$ be an NFA. By the previous lemma, we can assume than N has no $\epsilon$-transitions. (Otherwise, remove the ε-transitions first.)
@@ -82,10 +79,9 @@ Let $N$
 				|   \____| {q,p,r} |          0,1 /--->|null| |
 				|        \_________/              \____\____/ |
 				/---------------------------------------------/
-```ad-abstract
-title: Corollary
-###### "A language is regular if and only if it is accepted by an NFA."
-```
+
+>#### Corollary
+>###### "A language is regular if and only if it is accepted by an NFA."
 
 ```ad-hint
 title: Theorems of Regular Languages
@@ -93,7 +89,7 @@ title: Theorems of Regular Languages
 ##### "The regular languages are closed under union."
 $$\text{If } A, B \in REG \text{, then } A ∪ B \in REG$$
 
-##### "The regular languages are closed under concatenation.""
+##### "The regular languages are closed under concatenation."
 $$\text{If } A, B \in REG \text{, then } A * B \in REG \text{ where } A * B = \{xy \text{ | } x \in A \text{ and } y \in B\}$$
 (Copy everything and add epsilon-transitions)
 

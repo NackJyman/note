@@ -123,12 +123,10 @@ Regular languages are closed inder the regular operations of union, concatenatio
 ##### Regular Operations 
 Regular languages are closed inder the regular operations of union, concatenation, and star.
 
-```ad-hint
-title: Theorem
 
- ##### "If $A, B \in$ REG, then $A ∪ B \in$ REG"
+>#### Theorem
+>###### "If $A, B \in$ REG, then $A ∪ B \in$ REG"
 
-```
 Let A, B ∈ REG. Then there exist two DFAs $M_A=(Q_A,\Sigma,\delta_A,q_A,F_A)$ and $M_B (Q_B,\Sigma,\delta_B,q_B,F_B)$ with $L(M_A) = A\text{ and }L(M_B) = B.$ We will use $M_A$ and $M_B$ to constructa new DFA $M$ with $L(M) = A∪B$
 > Let $M = (Q,\Sigma,\delta,q_0,F)$ where
 $$Q = Q_A \text{ x } Q_B = \{(p,q)\text{ | }p \in Q_A, q \in Q_B\}$$
@@ -150,28 +148,25 @@ $$= (\delta_A(\delta∗A(q_A, x), b), δB (δ∗B (q_B , x), b))$$
 $$= (δ∗A(qA, x_b), δ∗B (q_B , x_b)).$$
 ```
 
-#### Closure Under Complementation
+##### Closure Under Complementation
 Compliement of language A is defined as:
 $$A^c = \{x \in \Sigma^* \text{ | } x \not \in A\}$$
 
-```ad-hint
-title: Theorem
+>#### Theorem
+>###### "if $A$ is regular, then $A^c$ is regular"
 
-##### "if $A$ is regular, then $A^c$ is regular"
-```
 Proof:
 Let $M = (Q,\Sigma,\delta,q_0,F)$ be a DFA for A. Define a new DFA:
 $$M' = (Q,\Sigma,\delta,q_0,Q - F)$$
 that flips the accepting and nonaccepting states of M. Then:
 $$L(M') = L(M)^c = A^c$$
 
-#### Closure Under Intersection 
+##### Closure Under Intersection 
 
-```ad-hint
-title: Theorem
 
-##### "If A and B are regular languages, then A∩B is regular"
-```
+>#### Theorem
+>###### "If A and B are regular languages, then A∩B is regular"
+
 
 Proof: $A∩B = (A^c ∪ B^c)^c$
 1. Since A and B are regular, $A^c$ and $B^c$ is also regular.

@@ -4,20 +4,21 @@
 ---
 ###### [[pa_home | unit homepage]]
 ---
-#### Pumping Lemma for Context-Free Languages
 
-###### If $A$ is a context-free language, then there is a number $p$ (the pumping constant) such that for evert $w \in A$ with $|w| \ge p, w$ can be divided into five pieces $w = uvxyz$ satisfying the following conditions:
-1. ###### For all $i \ge 0, ub^ixy^iz \in A$.
-2. ###### $|xy| > 0.$
+>#### Pumping Lemma for Context-Free Languages
+>###### If $A$ is a context-free language, then there is a number $p$ (the pumping constant) such that for every $w \in A$ with $|w| \ge p, w$ can be divided into five pieces $w = uvxyz$ satisfying the following conditions:
+>1. ###### For all $i \ge 0, uv^ixy^iz \in A$.
+2. ###### $|vy| > 0.$
 3. ###### $|vxy| \le p$.
 
 ##### Comments:
 - Condition (2) says that $v \not = \epsilon \text{ or } y \not = \epsilon$
-- Condition (1) says that $uxz, \ uvxyz, \ uvvxyyz, \ uvvvxyyyz, \ . \ . \ ,$ are all in $A.$
+- Condition (1) says that $uxz, \ uvxyz, \ uvvxyyz, \ uvvvxyyyz, \ . \ .$ 
+are all in $A$.
 
 ---
 
-Proof. 
+##### Proof: 
 Let $G$ be a CFG for $A$. 
 
 Let $b$ be the max $\#$ symbols on the RHS of a rule (assume $b \ge 2$).
@@ -31,14 +32,12 @@ In any parse tree for $G$, a node can have no more than $b$ children.
  
 Therefore, if the height of the parse tree is at most $h$, the length of the string generated is at most $b^h$. 
 
-Conversely, if a generated string is at least $b^h + 1$ long, each of its parse trees must be at least $h + 1 $high.
-
----
+Conversely, if a generated string is at least $b^h + 1$ long, each of its parse trees must be at least $h + 1$ high.
 
 Recall $|V|$ is the $\#$ of variables in $G$. We set the pumping constant $p$ to be $$p = b^{|V|+1}.$$ 
-If a string $s \in A$ and $|s| \ge p$, any parse tree for s must be at least $|V| + 1$ high, because $$p = b^{|V |+1} ≥ b^{|V |} + 1.$$
 
----
+If a string $s \in A$ and $|s| \ge p$, any parse tree for $s$ must be at least $|V| + 1$ high, because $$p = b^{|V |+1} ≥ b^{|V |} + 1.$$
+
 Let τ be a parse tree for $s \in A, s \ge p$. If there are multiple parse trees, choose τ to be one with the smallest number of nodes. 
 We know: 
 - τ must be at least $|V| + 1$ high 
@@ -47,8 +46,6 @@ We know:
 - therefore there are $\ge |V| + 1$ variables 
 - there are only $|V|$ variables in $G$, so some variable appears more than once on the path 
 - let $R$ be a variable that repeats among the lowest $|V| + 1$ variables on the path
-
----
 
 ![[Pasted image 20220223002813.png]]
 
@@ -104,8 +101,8 @@ Therefore $CFL$ is _not_ closed under intersection
 ---
 
 However it can be shown that the context-free languages are closed inder intersection with the regular languages:
-#### Theorem
-###### If $A \in CFL$ and $B \in REG$, then $A \cap B \in CFL$.
+>#### Theorem
+>###### If $A \in CFL$ and $B \in REG$, then $A \cap B \in CFL$.
 
 ##### Proof:
 HWHWHWHW HAHAH HEEEHEE ITS HW HA :)

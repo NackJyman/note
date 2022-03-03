@@ -35,15 +35,15 @@ We define DFA $M_\equiv = (Q, \Sigma, \delta, q_0, F)$ where:
 
 Because $\equiv$ is a _right congruence_, $\delta$ is well defined. Since $\equiv$ refines $A$, we have $x \in A \iff [x] \in F$ for all $x \in \Sigma^*$
 
-#### Lemma 
-###### For all $x,y \in \Sigma^*, \delta^*([x],y) = [xy]$.
+>#### Lemma 
+>###### For all $x,y \in \Sigma^*, \delta^*([x],y) = [xy]$.
 
 ##### Proof
 
 ...
 
-#### Theorem
-###### $L(M_\equiv) = A$.
+>#### Theorem
+>###### $L(M_\equiv) = A$.
 
 ##### Proof
 ...
@@ -51,9 +51,9 @@ Because $\equiv$ is a _right congruence_, $\delta$ is well defined. Since $\equi
 ---
 The following lemma states the mappings $M \rightarrow \equiv_M and \equiv \rightarrow M_\equiv$ are inverses of each other, up to isomorphism of automaton.
 
-#### Lemma
-###### If $\equiv$ is a myhill-Nerode relation for $A$, and if we apply the construction $\equiv \rightarrow M_{\equiv}$ and then apply the construction $M_{\equiv} \rightarrow \equiv_{M_\equiv}$, the relation $\equiv_{M_\equiv}$ is identical to $\equiv$. $$\equiv \rightarrow M_\equiv \rightarrow \equiv_{M_\equiv} = \equiv$$
-###### If M is a DFA for $A$ with no inaccessible states, and if we apply the construction $M \rightarrow \equiv_M$ and then apply the construction $\equiv_M \rightarrow M_{\equiv_M}$, the resulting DFA $M_{\equiv_M}$ is isomorphic to $M$. $$M \rightarrow \equiv_M \rightarrow M_{\equiv_M} \approx M$$
+>#### Lemma
+>###### If $\equiv$ is a myhill-Nerode relation for $A$, and if we apply the construction $\equiv \rightarrow M_{\equiv}$ and then apply the construction $M_{\equiv} \rightarrow \equiv_{M_\equiv}$, the relation $\equiv_{M_\equiv}$ is identical to $\equiv$. $$\equiv \rightarrow M_\equiv \rightarrow \equiv_{M_\equiv} = \equiv$$
+>###### If M is a DFA for $A$ with no inaccessible states, and if we apply the construction $M \rightarrow \equiv_M$ and then apply the construction $\equiv_M \rightarrow M_{\equiv_M}$, the resulting DFA $M_{\equiv_M}$ is isomorphic to $M$. $$M \rightarrow \equiv_M \rightarrow M_{\equiv_M} \approx M$$
 
 ---
 ### Refining Relations
@@ -65,8 +65,8 @@ A relation $\equiv_1$ _refines_ a relation $\equiv_2$ if: $$x \equiv_1 y \Righta
 Let $A \subseteq \Sigma^*$. We define an equivalance relation $\equiv_A$ on $\Sigma^*$ by $$x \equiv_A y \iff (\forall z \in \Sigma^*) (xz \in A \iff yz \in A)$$
 for all $x,y \in \Sigma^*$
 
-#### Lemma 
-###### Let $\subseteq \Sigma^*$ The relation $\equiv_A$ is _right congruence refining_ $A$ and is the coarsest such relation on $\Sigma^*$
+>#### Lemma 
+>###### Let $\subseteq \Sigma^*$ The relation $\equiv_A$ is _right congruence refining_ $A$ and is the coarsest such relation on $\Sigma^*$
 
 ##### Proof:
 ...
@@ -87,8 +87,8 @@ Let $\equiv$ be a Myhill-Nerode relation for $A$. Then $\equiv$ is a right congr
 If $\equiv_A$ is of finite index, then it is a Myhill-Nerode relation for $A$ by the Lemma. The construction $\equiv_a \rightarrow M_{\equiv_A}$ produces a DFA for $A$.
 
 ---
-#### Corollary
-###### For any regular language A, the DFA $M_{\equiv_A}$ is the minimal DFA for $A$.
+>#### Corollary
+>###### For any regular language A, the DFA $M_{\equiv_A}$ is the minimal DFA for $A$.
 
 ##### Proof:
 ...

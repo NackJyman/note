@@ -8,8 +8,8 @@
 
 ---
 ## CFG $\rightarrow$ PDA
-#### Theorem
-###### A language is context-free if and only if it is accepted by some pushdown automaton.
+>#### Theorem
+>###### A language is context-free if and only if it is accepted by some pushdown automaton.
 
 Must show that for every CFG G, there is an equivalent PDA M with L(M) = L(G).
 
@@ -50,8 +50,9 @@ We have the rule $$A_{p,q} \rightarrow aA_{r,s}b$$
 
 3. For each $p \in Q$, we have the rule: $$A_{p,p} \rightarrow \epsilon$$
 
-#### Lemma:
-###### $A_{p,q}$ generates exactly the strings $x$ for which $$(p,x,\epsilon) \rightarrow^* (q,\epsilon,\epsilon)$$
+>#### Lemma:
+>###### $A_{p,q}$ generates exactly the strings $x$ for which $$(p,x,\epsilon) \rightarrow^* (q,\epsilon,\epsilon)$$
+
 that is, all strings that take M from state $p$ with empty stack to quick stack.
 
 There are two directions:

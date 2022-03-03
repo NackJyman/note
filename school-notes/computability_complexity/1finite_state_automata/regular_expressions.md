@@ -41,19 +41,18 @@ $$R \circ \epsilon \not = R$$
 ---
 Conventions:
 In a regular expression, Σ can be used as an abbreviation for the ($R_1 ∪ R_2$)
-```ad-hint
-title: Theorem 
-##### "A language is regular if and only if it can be descrived by a Regular expression."
-```
 
-```ad-abstract
-title: Lemma
-###### "If a language is described by a regular expression, then it is regular (there is an NFA that accepts it)"
-```
->
-**Proof to show regular: **
+>#### Theorem 
+>###### "A language is regular if and only if it can be descrived by a Regular expression."
+
+
+>#### Lemma
+>###### "If a language is described by a regular expression, then it is regular (there is an NFA that accepts it)"
+
+
+##### Proof to show regular:
 Assume that R1 and R2 are regular expressions that have been shown regular, and N1 and N2 are NFAs with $L(N1) = L(R1)$ and $L(N2) = L(R2)$. (This is the inductive hypothesis.) We have three inductive steps.
->1. $R = R1 ∪ R2$. Then $L(R) = L(R1) ∪ L(R2)$ by definition, so L(R) is also regular because the regular languages are closed under union. Specifically, we may use the NFA union construction to obtain an NFA N with $L(N) = L(N1) ∪ L(N2) = L(R1) ∪ L(R2) = L(R)$.
+1. $R = R1 ∪ R2$. Then $L(R) = L(R1) ∪ L(R2)$ by definition, so L(R) is also regular because the regular languages are closed under union. Specifically, we may use the NFA union construction to obtain an NFA N with $L(N) = L(N1) ∪ L(N2) = L(R1) ∪ L(R2) = L(R)$.
 2. $R = R1 · R2$. Then $L(R) = L(R1) · L(R2)$ by definition, so $L(R)$ is regular by closure under concatenation. We may use the concatenation construction to obtain an NFA N with $L(N) = L(N1) · L(N2) = L(R1) · L(R2) = L(R)$.
 3. $R = R∗1. Then L(R) = L(R1)∗$ by definition, so $L(R)$ is regular by closure under the star operation. We may use the star operation to obtain an NFA $N$ with $L(N) = L(N1)∗ = L(R1)∗ = L(R)$.
 
@@ -66,10 +65,8 @@ title: Regular Operations on Languages
 - **Star:** $A^* = \{ x_1 x_2 ... x_k | k \ge 0 \text{ and each } x_i \in A \}$
 ```
 
-```ad-hint
-title: Theorem 
-##### "The class of regular languages is closed under the concatenation operation. Meaning if $A_1$ and $A_2$ are regular languages then so is $A_1 \cdot A_2$ or $A_1 \cup A_2$"
-```
+>#### Theorem 
+>###### "The class of regular languages is closed under the concatenation operation. Meaning if $A_1$ and $A_2$ are regular languages then so is $A_1 \cdot A_2$ or $A_1 \cup A_2$"
 
 **Tokens:** Elemental objects in programming language such as variable names and constants, may be described with regular expressions.
 

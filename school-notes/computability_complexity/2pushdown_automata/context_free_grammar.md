@@ -82,13 +82,13 @@ We write $u \Rightarrow^*v v$ if
 
 The language of G is $$L(G) = \{w \in \Sigma^* | S \Rightarrow ^* w\}$$
 
-#### Definition
-###### If $A = L(G)$ for some context-free grammar, then $A$ is a context-free language. We let CFL be the class of all context-free languages.
+>#### Definition
+>###### If $A = L(G)$ for some context-free grammar, then $A$ is a context-free language. We let CFL be the class of all context-free languages.
 
 ---
 
-#### Theorem
-###### $REF \subseteq CFL$. That is, every regular language is context-free.
+>#### Theorem
+>###### $REF \subseteq CFL$. That is, every regular language is context-free.
 
 ##### Proof:
 Let $A \in REG$, and let $M = (Q, \Sigma, \delta, q_0, F)$ be a DFA for A. For each state $q \in Q$, we make a variable $T_q$. Formally, 
