@@ -12,10 +12,6 @@
 - #### [[lp_home | Linux Programming]]
 
 ---
-- #### [[ml_home | Machine Learning]]
-	- ###### [[Murphy_Machine_Learning.pdf | Textbook]]
-
----
 - #### [[ppl_home | Principals of Programming Languages]]
 
 ---
@@ -23,6 +19,10 @@
 	-	[[rhetoric_reading | Reading Notes]]
 	-	[[rhetoric_lecture | Lecture Notes]]
 ---
+
+---
+- #### [[ml_home | Machine Learning (Depreciated)]]
+	- ###### [[Murphy_Machine_Learning.pdf | Textbook]]
 # Fall Semester, 2021
 
 ##### Scientific Computing

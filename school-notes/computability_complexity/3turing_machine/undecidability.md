@@ -26,7 +26,8 @@ $$
 
 We define a new number $x$ by $x = 0.e_0e_1e_2e_3 . . .$, where
 
-ei =  0 if d i i 6= 0 1 if d i i = 0 
+$$ e_i= \left\{ \begin{array}{rcl} 0 & \text{ if } d_i^i \not = 0 \\
+1 & \text{ if } d_i^i = 0 \end{array}\right\}$$
 
 Then for all $i, e_i \not = d_i^i$. Therefore $x \not = f(i)$ for all $i$, so $f$ is not onto.
 
@@ -44,7 +45,7 @@ $$...$$
 Proof
 
 The following algorithm recognizes $A_{TM}$. 
-Algorithm U: On input $\lange M,w \rangle$, where $M$ is a TM and $w$ is a string: 
+Algorithm U: On input $\langle M,w \rangle$, where $M$ is a TM and $w$ is a string: 
 1. Simulate M on w. 
 2. If M ever enters an accept state, accept. If M ever enters a reject state, reject.
  

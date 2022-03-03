@@ -6,3 +6,7 @@
 
 Lessons:
 - [[turing_machine]]
+
+#### Decidability Stuffs
+- [[decidability]]
+- [[undecidability]]
