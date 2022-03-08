@@ -1,9 +1,10 @@
 # Writing Shell Scripts
 ##### Linux Programming
+
 ---
 #shell #script #utility #linux
 
-Writing shell scripts lets you create your own utilities and functions for manipulating the stuff on your computer. 
+Writing shell scripts lets you create your own utilities and functions for manipulating the stuff on your computer.
 
 '#' is used as a comment character.
 
@@ -27,7 +28,7 @@ if [ $x == "bill" ]; then
 ```
 
 ##### Borne Shell Arguements
-For the Bourne shell (_sh_), arguements are readily available inside the script. 
+For the Bourne shell (_sh_), arguements are readily available inside the script.
 - "$1" returns the first arguement, "$2" the second, and so on, through "$9."
 - Entire command line is "$*"
 - Number of arguments is "$#"
@@ -47,7 +48,7 @@ There are often problems with strings with spaces or special characters. Using q
 Non interchaneable with other types of quotation marks. Everything within the back quotes is treated as a command. It is executed in a subshell and the standard output is substituted within the current script as a string.
 
 ---
-### General Syntax 
+### General Syntax
 
 $\underline{Everything}$ must be delimited with whitespace.
 
@@ -91,5 +92,3 @@ for ARGUEMENT in $*; do
     fi
 done
 ```
-
-

@@ -50,13 +50,12 @@ The _Language_ L(G) of G is the set of all strings tht can be derived from it. I
 
 ---
 
-#### Formal Definition
-A context-free grammar (CFG) is a 4-tuple G = (V, $\Sigma$, R, S) where
-
-- V is a finite set called the variables (Usually V consists of capital letters)
-- $\Sigma$ is a finite set, disjoint from V, called the terminals
-- R is a finite set of Rules, with each rule begin in the form $$R \rightarrow \omega$$ where $R \in V$ and $\omega \in (V \cup \Sigma)^*$
-- S is the start variable
+>#### Formal Definition
+>A context-free grammar (CFG) is a 4-tuple $G$ = $(V, \Sigma, R, S)$ where
+>- $V$ is a finite set called the variables (Usually $V$ consists of capital letters)
+>- $\Sigma$ is a finite set, disjoint from $V$, called the terminals
+>- $R$ is a finite set of Rules, with each rule begin in the form $$R \rightarrow \omega$$ where $R \in V$ and $\omega \in (V \cup \Sigma)^*$
+>- $S$ is the start variable
 
 ```ad-abstract
 title: Aside: Context-Sensitive Grammars (CSG)
@@ -74,7 +73,7 @@ In this example, $G = (V, \Sigma, R, A)$ where:
 - $R = \{A \rightarrow 0A1, A \rightarrow B, B \rightarrow \# \}$
 - $A$ is the start variable
 
-Let $G = (V, \Sigma, R, S)$ be a CFG. If $uv,w \in (V \cup \Sigma)^*$ are strings of variables and terminals and $A \rightarrow w$ is a rule in the grammar, then we say $uAv$ yields $uwv$, written $$uAv \Rightarrow uwv.$$
+Let $G = (V, \Sigma, R, S)$ be a CFG. If $u,v,w \in (V \cup \Sigma)^*$ are strings of variables and terminals and $A \rightarrow w$ is a rule in the grammar, then we say $uAv$ yields $uwv$, written $$uAv \Rightarrow uwv.$$
 
 We write $u \Rightarrow^*v v$ if
 1. $u = v$ or

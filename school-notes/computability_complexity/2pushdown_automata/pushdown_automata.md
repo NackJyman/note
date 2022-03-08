@@ -9,7 +9,7 @@
 ---
 
 #### Formal Defninition
-A (Nondeterministic) *pushdown automaton* (PDA) is a 6-tuple $M = (Q \Sigma, \Gamma, \delta, q_0, F)$ where
+A (Nondeterministic) *pushdown automaton* (PDA) is a 6-tuple $M = (Q, \Sigma, \Gamma, \delta, q_0, F)$ where
 -	Q is a finite set of states
 -	$\Sigma$ is the _input alphabet_
 -	$\Gamma$ is the _stack alphabet_
