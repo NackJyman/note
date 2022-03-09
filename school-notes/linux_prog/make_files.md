@@ -1,5 +1,5 @@
-# Linux Programming
-## Writing Make Files
+# Writing Make Files
+##### Linux Programming
 ---
 
 You gotta say what to compile, which compiler (prolly gcc). 

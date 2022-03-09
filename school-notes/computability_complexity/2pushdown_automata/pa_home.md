@@ -4,15 +4,15 @@
 ---
 
 Lessons:
+#### Context-Free Grammars
+- [[context_free_grammar | Context Free Grammar]]
 
-### Push-Down Automata
+#### Push-Down Automata
 - [[pushdown_automata | Pushdown Automata (PDA)]]
 - [[equivalence_cfg_pda]]
 
-### Grammars
-##### Context-Free
+#### Context-Free Languages in Polynomial Time
 - [[cfl_polynomial_time]]
-- [[context_free_grammar | Context Free Grammar]]
 
-##### Non Context-Free
-- [[noncontext_free_languages | Noncontext-Free Grammar]]
+#### Non Context-Free Languages
+- [[noncontext_free_languages | Noncontext-Free Grammar (And More 'Pumping Lemma')]]

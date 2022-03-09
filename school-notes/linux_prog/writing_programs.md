@@ -183,13 +183,50 @@ RM=/bin/rm -f
 
 .PHONY: tidy clean
 
-wycat: wyls.c
+wyls: wyls.c
 	${CC} ${CFLAGS} wyls.c -o wyls
 
 tidy:
 	${RM} *.o a.out core.*
 ```
 
+### wyls.h
+```c
+/*
+* wyls.h
+* Author: Jack Nyman
+* Date: March 8, 2022
+*
+* COSC 3750, Homework 5
+*
+* This is a simple version of the ls utility.
+*/
+#ifndef WYLS_H_
+#define WYLS_H_
+
+#include <dirent.h>
+#include <errno.h>
+#include <grp.h>
+#include <limits.h>
+#include <math.h>
+#include <pwd.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <time.h>
+#include <unistd.h>
+
+string humanBytes(int bytes);
+string time(int path);
+string permissions(int octal);
+string owner(string path);
+string ownerId(string path);
+
+string lsDir(string path);
+```
 ### wyls.c
 
 ```c
@@ -202,11 +239,132 @@ tidy:
 *
 * This is a simple version of the ls utility.
 */
-#include <stdio.h>
-#include <string.h>
-#include <errno.h>
+#include "wycat.h"
 
 int main(int argc, char **argv) {
+  // Initialize things
+  const BUFF_SIZE = 256;
+  bool human = false;
+  bool uid_gid = false;
+  bool current_dir = false;
+
+  if(argc == 1) { // No flags or arguments
+    bool current_dir = true;
+  }
+
+  // Check the supplied options
+  for(int i = 1; i < argc && argv[i][0] == '-'; i++) {
+    for(int j = 1; argv[i][j]; j++) {
+      char option = argv[i][j];
+      switch(option) {
+        case 'n':
+          uid_gid = true;
+          break;
+        case 'h':
+          human = true;
+          break;
+        default:
+          perror("wyls: Unsupported option.");
+          return 0;
+      }
+    }
+    if(i == (argc-1)) { // If the last argument supplied is an option
+      current_dir = true;
+    }
+  }
+  // Check arguemnts
+  char* userGroup, perms, size, timeMod;
+  int bytes, octal;
+  if(current_dir) { // NO ARGUMENTS, RUN IN CURRENT DIR
+    char dir[BUFF_SIZE];
+    getcwd(BUFF_SIZE, dir);
+    DIR* dr = opendir(dir);
+    if(!dr) {
+      perror("wyls: Could not open direcory.");
+    }
+    else {
+      struct dirent* entry = NULL;
+      while((entry = readdir(dr))) {
+        // Get Permissions, convert to human
+        perms = permissions(entry);
+        // Get username and groupname, or uid and gid
+        if(uid_gid) {
+          userGroup = ownerId(entry);
+        }
+        else {
+          userGroup = owner(entry);
+        }
+        // Get size of item in bytes, or human bytes
+        if(human) {
+          size = humanBytes(bytes);
+        }
+        else {
+          size = bytes;
+        }
+        // Get the time
+        timeMod = getTime(entry);
+        // Print permissions, owner/uid, group/gid, size, time, item
+        printf("%s %s %s %s %s %s", perms, userGroup, size, timeMod, entry);
+      }
+    }
+    closedir(dr);
+    return 0;
+  }
+  else { // ITERATE THROUGH THE ARGUMENTS
+    for(int i = 1; i < argc && argv[i][0] != '-'; i++) {
+      char* directory = argv[i];
+      DIR* dr = opendir(directory);
+      if(!dr) {
+        perror("wyls: Could not open direcory.");
+      }
+      else{
+        struct dirent* entry = NULL;
+        while((entry = readdir(dr))) {
+          // Get Permissions, convert to human
+          char* perms = permissions(octal);
+          // Get username and groupname, or uid and gid
+          if(uid_gid) {
+            char* userGroup = ownerId(entry);
+          }
+          else {
+            char* userGroup = owner(entry);
+          }
+          // Get size of item in bytes, or human bytes
+          if(human) {
+            char* size = humanBytes(bytes);
+          }
+          else {
+            int size = bytes;
+          }
+          // Get the time
+          char* timeMod = getTime(entry);
+          // Print permissions, owner/uid, group/gid, size, time, item
+          printf("%s %s %s %s %s %s", perms, userGroup, size, timeMod, entry);
+        }
+      }
+      closedir(dr);
+    }
+  }
   return 0;
+}
+
+char* humanBytes(int bytes) {
+  return "69K";
+}
+
+char* getTime(struct dirent* entry) {
+  return "Sep 19 2000";
+}
+
+char* permissons(int octal) {
+  return "-rw-rw-rw-";
+}
+
+char* owner(struct dirent* entry) {
+  return "Jack Administrator";
+}
+
+char* ownerId(struct dirent* entry) {
+    return "Jack Administrator";
 }
 ```

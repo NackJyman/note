@@ -11,19 +11,25 @@
 >#### Theorem
 >###### A language is context-free if and only if it is accepted by some pushdown automaton.
 
-Must show that for every CFG G, there is an equivalent PDA M with L(M) = L(G).
+There are two directions:
 
-Show that for every PDA M, there is an equivalent CFG G with L(G) = L(M).
+- Must show that for every CFG $G$, there is an equivalent PDA $M$ with $L(M) = L(G)$.
+- Show that for every PDA $M$, there is an equivalent CFG $G$ with $L(G) = L(M)$.
+
+---
 
 ### Converting a CFG into a PDA
 
-Consider the grammar $S \rightarrow 0S1 | \epsilon$.
+Consider the grammar $S \rightarrow 0S1 \ | \ \epsilon$.
 
+Then we can build the following PDA:
 ![[Pasted image 20220217113409.png]]
 
 On $q_{\text{loop}}$, we have
 - $a, a \rightarrow \epsilon$ for each $a \in \Sigma$
-- $\epsilon, A \rightarrow \eta$ for each rule $A \rightarrow \eta$ 
+- $\epsilon, A \rightarrow \omega$ for each rule $A \rightarrow \omega$ 
+
+![[Pasted image 20220308103435.png]]
 
 _Simple Construction_
 
@@ -31,8 +37,8 @@ _Simple Construction_
 
 ## PDA $\rightarrow$ CFG
 
-#### Theorem
-###### If a language is accepted by a PDA, then it is context-free.
+>#### Theorem
+>###### If a language is accepted by a PDA, then it is context-free.
 
 ##### Proof:
 Let $A$ be accepted by PDA $M = (Q, \Sigma, \Gamma, \delta, q_0, F)$. We will construct a CFG $G = (V, \Sigma, R, S)$ with L(G) = L(M)
@@ -51,9 +57,7 @@ We have the rule $$A_{p,q} \rightarrow aA_{r,s}b$$
 3. For each $p \in Q$, we have the rule: $$A_{p,p} \rightarrow \epsilon$$
 
 >#### Lemma:
->###### $A_{p,q}$ generates exactly the strings $x$ for which $$(p,x,\epsilon) \rightarrow^* (q,\epsilon,\epsilon)$$
-
-that is, all strings that take M from state $p$ with empty stack to quick stack.
+>###### $A_{p,q}$ generates exactly the strings $x$ for which $$(p,x,\epsilon) \rightarrow^* (q,\epsilon,\epsilon)$$that is, all strings that take M from state $p$ with empty stack to quick stack.
 
 There are two directions:
 - If $A_{p,q} \Rightarrow^* x$, then $(p,x,\epsilon) \rightarrow^* (q,\epsilon,\epsilon)$
