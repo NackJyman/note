@@ -106,3 +106,10 @@ context - summary of cover (quick summary of larger text)
 Take into account the political and socio current events of the release of the piece. Then narrows it down specifically 
 
 ---
+
+###### March 9th, 2022
+
+Jane throws a rock, I get around.
+
+Larry swims in the lake 
+I killed three people everyone thought delio.

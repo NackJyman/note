@@ -42,7 +42,8 @@ $$...$$
 
 >#### Theorem
 >###### $A_{TM}$ is _Turing-Recognizable_
-Proof
+
+##### Proof
 
 The following algorithm recognizes $A_{TM}$. 
 Algorithm U: On input $\langle M,w \rangle$, where $M$ is a TM and $w$ is a string: 
@@ -90,7 +91,7 @@ $$K = \{ ... \}$$
 >#### Theorem 
 >###### $K$ is undecidable
 
-Proof;
+##### Proof:
 ...
 
 ---
@@ -98,7 +99,7 @@ Proof;
 >#### Theorem 
 >###### $A_{TM}$ is undecidable
 
-Second Proof:
+##### Second Proof:
 Suppose that $A_{TM}$ is decidable by some TM $N$. We design a TM $D$ as follows: 
 D: On input hMi, where M is a TM: 
 1. Run N on input hM,hMii. 
@@ -118,8 +119,8 @@ This is about the limits of computation, Finding the possibility of a result.
 ---
 ### Co-Turing-Recognizability
 
-#### Definition
-###### A language is _co-Turing-recognizable,_ if it is the complement of a Turing-recognizable language.
+>#### Definition
+>###### A language is _co-Turing-recognizable,_ if it is the complement of a Turing-recognizable language.
 
 If $A$ is co-turing-recognizable, then $A^c$ is Turing-recognizable.This means there is a Turing machine M such that for all inputs 
 - w, w ∈ A c ⇒ M accepts w. 
@@ -141,10 +142,10 @@ A is co-Turing-recognizable if there is a TM M such that for all w,
 - w ∈ A ⇒ M does not accept w. 
 - w ∈/ A ⇒ M accepts w
 
-#### Theorem
-###### A language is decidable if and only if both it is both Turing-recognizable and co-Turing-Recognizable.
-
-Proof.
+>#### Theorem
+>###### A language is decidable if and only if both it is both Turing-recognizable and co-Turing-Recognizable.
+![[Pasted image 20220310111203.png]]
+##### Proof.
 
 Let A be a language. 
 
@@ -174,18 +175,26 @@ Running in “parallel” means using two tapes (which can be simulated by a one
 - Accept if M1 accepts. Reject if M2 accepts.
 
 We have 
-w ∈ A ⇒ M1 accepts w ⇒ M accepts w 
-and w 6∈ A ⇒ M2 accepts w ⇒ M rejects w. 
+$w ∈ A ⇒ M1$ accepts $w ⇒ M$ accepts w 
+and 
+$w \not ∈ A ⇒ M_2$ accepts $w \\ ⇒ M$ rejects w. 
 
-Then M decides A, so A is decidable.
+Then $M$ decides $A$, so A is decidable.
 
 ---
 
-#### Corollary
-###### 1. If A is Turing-recognizable but not decidable, then A is not co-Turing-recognizable. 
-###### 2. If A is co-Turing-recognizable but not decidable, then A is not Turing-recognizable.
+>#### Corollary
+>###### 1. If A is Turing-recognizable but not decidable, then A is not co-Turing-recognizable. 
+>###### 2. If A is co-Turing-recognizable but not decidable, then A is not Turing-recognizable.
 
 _Get the diagram for dis_
+
+---
+#### Corollary
+###### $A_{TM}$ is not co-turing-recognizable
+
+##### Proof:
+We know that $A_{TM}$ is TUring-recognizeable. If $A_{TM}$ is also co-Turing-recognizable, then $A_{TM}$ is decidable, but it is not. $\boxdot$
 
 ---
 
@@ -200,7 +209,7 @@ $$HALT_{TM} = \{ ... \}$$
 
 Proof. The following algorithm recognizes $HALT_{TM}$. 
 
-Algorithm U: On input hM,wi, where M is a TM and w is a string: 
+Algorithm U: On input $\langle M,w \rangle$, where M is a TM and w is a string: 
 1. Simulate M on w. 
 2. If M halts, accept. 
 
@@ -209,41 +218,97 @@ If M does not halt on w, then U will not halt. This is why U does not decide $HA
 >#### Theorem
 >###### $HALT_{TM}$ is undecidable.
 
-Proof. 
+##### Proof: 
 Suppose that $HALT_{TM}$ is decidable. We will show that ATM is also decidable, obtaining a contradiction. Let R be a decider for $HALT_{TM}$. We construct the following TM S to decide ATM. 
-S: On input hM,wi, where M is a TM and w is a string: 
-1. Run TM R on input hM,wi. 
+S: On input $\langle M,w \rangle$, where M is a TM and w is a string: 
+1. Run TM R on input $\langle M,w \rangle$. 
 2. If R rejects, reject. 
 3. If R accepts, simulate M on w until it halts. 
 	- If M accepts, accept. 
 	- If M rejects, reject.
 
-We now verify that S decides ATM. First suppose hM,wi ∈ ATM: 
-hM,wi ∈ ATM ⇒ M accepts w 
+We now verify that S decides ATM. First suppose $\langle M,w \rangle$ ∈ ATM: 
+$\langle M,w \rangle$ ∈ ATM ⇒ M accepts w 
 ⇒ M halts on w 
-⇒ R accepts hM,wi 
+⇒ R accepts $\langle M,w \rangle$
 ⇒ S simulates M on w 
 ⇒ S finds that M accepts w 
-⇒ S accepts hM,wi
+⇒ S accepts $\langle M,w \rangle$
 
-Now suppose hM,wi ∈/ ATM. Then M does not accept w, so either M rejects w or M does not halt on w. We consider these two cases separately: 
+Now suppose $\langle M,w \rangle \not \in A_{TM}$. Then $M$ does not accept $w$, so either $M$ rejects $w$ or $M$ does not halt on $w$. We consider these two cases separately: 
 
 M rejects w ⇒ M halts on w 
-⇒ R accepts hM,wi 
+⇒ R accepts $\langle M,w \rangle$ 
 ⇒ S simulates M on w 
 ⇒ S finds that M rejects w 
-⇒ S rejects hM,wi 
+⇒ S rejects $\langle M,w \rangle$ 
 
-M does not halt on w ⇒ R rejects hM,wi 
-⇒ S rejects hM,wi 
+M does not halt on w ⇒ R rejects $\langle M,w \rangle$ 
+⇒ S rejects $\langle M,w \rangle$ 
 
-In either case, S rejects hM,wi.
+In either case, $S$ rejects $\langle M,w \rangle$.
 
-Since ATM is undecidable, decider S does not exist. 
+Since $A_{TM}$ is undecidable, decider $S$ does not exist. 
 
-Therefore decider R for HALTTM does not exist and HALTTM must be undecidable.
+Therefore decider R for $HALT_{TM}$ does not exist and $HALT_{TM}$ must be undecidable.
 
 _see slide 78 on 17_undecidable_
 
 ---
 
+### Emptiness Problem for TMs
+
+The emptiness problem for TMs:
+$$E_{TM} = \{\langle M \rangle \ | \ M \text{ is a TM and } L(M) = \emptyset \}$$
+>#### Theorem
+>###### $E_{TM}$ is undecidable.
+
+##### Proof:
+
+Suppose that ETM is decidable. We will show that ATM is also decidable. The idea of the proof is that given any instance hM,wi of ATM, we can construct an instance hM(w) i of ETM so that: If M accepts w, then L(M(w) ) 6= ∅. If M does not accept w, then L(M(w) ) = ∅.
+
+Let M be a TM and w be an input for M. Here is the description of M(w) . Note that w is hardcoded into M(w) . M(w) : on any input x: 1 If x 6= w, reject. 2 If x = w, then run M on input w and accept if M does. Then if M accepts w, L(M(w) ) = {w}. If M does not accept w, L(M(w) ) = ∅
+
+Now, assuming that ETM is decidable, we can use an algorithm for ETM to solve ATM. Suppose R is a TM that decides ETM. S: on input hM,wi, where M is a TM and w is a string: 1 Use the description of M and w to construct the TM M(w) as described above. 2 Run R on input hM(w)i. If R accepts, reject. If R rejects, accept.
+
+We verify that S decides A_{TM}. 
+$\langle M,w \rangle$ ∈ ATM ⇒ M accepts w 
+⇒ L(M(w) ) = {w} 
+⇒ L(M(w) ) 6= ∅ 
+⇒ hM(w) i ∈/ ETM 
+⇒ R rejects hM(w) i 
+⇒ S accepts hM,wi 
+$\langle M,w \rangle$ ∈/ ATM ⇒ M does not accept w 
+⇒ L(M(w) ) = ∅ 
+⇒ hM(w) i ∈ ETM 
+⇒ R accepts hM(w) i 
+⇒ S rejects hM,wi 
+
+Therefore S decides ATM, a contradiction, so ETM is undecidable. $\boxdot$
+
+---
+
+We just proved $E_{TM}$ is undecidable. Is it Turing-Recognizable.
+
+>#### Theorem
+>###### $E_{TM}$ is _co-turing-recognizable_
+
+##### Proof:
+Let s1,s2, . . . be an enumeration of all strings in Σ∗ . 
+
+Algorithm A: On input hMi: 
+	
+for i = 1, 2, . . . 
+for j = 1 to i 
+Run M on input sj for i steps. 
+If M accepts, accept. 
+
+- If L(M) 6= ∅, then some string is accepted by M, so A will accept hMi. 
+- If L(M) = ∅, then no string is accepted by M, and A will run forever on hMi. 
+
+Therefore $E^c_{TM}$ is Turing-recognizable.
+
+---
+
+### Summary
+![[Pasted image 20220310112849.png]]
