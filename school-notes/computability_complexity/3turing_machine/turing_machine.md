@@ -111,7 +111,7 @@ A configuration of a TM consists of the current state, the current tape contents
 
 ---
 
-Let $M = (Q, Σ, Γ, δ, q0, q_{accept}, q_{reject})$ be a TM. 
+Let $M = (Q, \Sigma, \Gamma, \delta, q_0, q_{accept}, q_{reject})$ be a TM. 
 - The start configuration of M on input $w \in \Sigma^*$ is the configuration q0w. 
 - In an accepting configuration the state is $q_{accept}$.
 - In a rejecting configuration the state is $q_{reject}$.
@@ -122,13 +122,13 @@ We say that _M accepts w_ if there exists a sequence of configurations $C_1, . \
 2. each $C_i$ yields $C_{i+1}$ via the transition function $\delta$ in one step.
 3. $C_k$ is an accepting configuration.
 
-The language of $M$ is $$L(M) = {w ∈ Σ ∗ | M accepts w}.$$ 
+The language of $M$ is $$L(M) = {w \in \Sigma^* | M \text{ accepts } w}$$ 
 
 We say that $L(M)$ is the language recognized by $M$
 >
 ---
-#### Definition
-###### A language is _Turing-Recognizable_ if some Turing machine recognizes it. That is, $B \subseteq \Sigma^*$ is Turing-recognizable if $B = L(M)$ for some Turing machine $M$.
+>#### Definition
+>###### A language is _Turing-Recognizable_ if some Turing machine recognizes it. That is, $B \subseteq \Sigma^*$ is Turing-recognizable if $B = L(M)$ for some Turing machine $M$.
 
 On an input w, a TM M has three possible outcomes: 
 - accept 
@@ -137,12 +137,12 @@ On an input w, a TM M has three possible outcomes:
 
 A Turing machine that always halts (i.e. accepts or rejects every input) is called a _decider._ A decider that recognizes some language is said to decide that language.
 
-#### Definition
-###### A language is _Turing-decidable_ (or simply decidable) if some Turing machine decides it. That is, $B \subseteq \Sigma^*$ is decidable if $B = L(M)$ for some always-halting Turing machine $M$ (a decider $M$).
+>#### Definition
+>###### A language is _Turing-decidable_ (or simply decidable) if some Turing machine decides it. That is, $B \subseteq \Sigma^*$ is decidable if $B = L(M)$ for some always-halting Turing machine $M$ (a decider $M$).
 _Recursive is also used for this concept_
 
-#### Proposition
-###### Every decidable language is also _Turing-Recognizable_
+>#### Proposition
+>###### Every decidable language is also _Turing-Recognizable_
 
 ---
 ![[Pasted image 20220224114401.png]]

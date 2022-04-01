@@ -116,7 +116,7 @@ Suppose that $CFL$ is closed under complement.
 Let 
 $$A = \{a^i b^j c^k | i \not = j \text{ or } j \not = k\}.$$
 Then $A \in CFL$, so $A^c \in CFL$ by assumption. Because $CFL$ is closed under intersection with $REG$, we also have 
-$$A^c ∩ a^∗ b^∗ c^∗ = \{a n b n c n | n \ge 0\} \in CFL,$$
+$$A^c ∩ a^∗ b^∗ c^∗ = \{a^n b^n c^n | n \ge 0\} \in CFL,$$
 a contradiction. 
 
 ##### Proof 2:
