@@ -3,6 +3,9 @@
 ###### March 3rd, 2022
 ---
 
+>#### Notation
+>###### Binary strings can be used to encode graphs, grammars, automata, Turing machines; any object that can be described finitely. Our notation for encoding an object $O$ is $\langle O \rangle$. We can encode several objects $O_1, ..., O_k$ as $\langle O_1, ..., O_k \rangle$. The encoding can be done in many ways. It does not matter which one we pick, because a Turing machine can always translate one encoding into another.
+
 ## Decidable Problems 
 
 ```ad-abstract
@@ -13,7 +16,7 @@ $$A_{DFA} = \{ \langle B, w \rangle \ | \ B \text{ is a DFA that accepts input s
 >###### $A_{DFA}$ is decidable
 ##### Proof:
 Algorithm $M$:
-On inupt $\langle B, w \rangle $, where $B$ is a DFA and $w$ is a string.
+On inupt $\langle B, w \rangle$, where $B$ is a DFA and $w$ is a string.
 1. Simulate $B$ on $w$.
 2. If the simulation ends in an accepting state, accept.
 If it ends in a nonaccepting state, reject.

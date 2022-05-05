@@ -42,7 +42,7 @@ The most fundamental open question in computational complexity is the P vs NP pr
 P means "deterministic polynomial-time"
 NP means "nondeterministic polynomial-time"
 
-![[Pasted image 20220324114544.png]]
+>![[Pasted image 20220324114544.png]]
 
 Major open problems in computational complexity: 
 - Does P = NP?
@@ -83,11 +83,11 @@ Examples:
 
 >#### Definition
 >###### Let $M$ be a Turing machne that halts on all inputs. The _running time_ or _time complexity_ of $M$ is the function $f : N \rightarrow N$ where $f(n)$ is the maximum number of steps that $M$ uses on any input of size $n$.
->###### We Say that $M$ runs in $f(n)$ time and that $M$ is an $f(n)-time-bounded Turing machine.
+>###### We Say that $M$ runs in $f(n)$ time and that $M$ is an $f(n)$-time-bounded Turing machine.
 >###### A Turing machine $M$ is polynomial-time-bounded if $M$ runs in $O(n^c)$ time for some constant $c$.
 
 >#### Definition
->###### $P$ is the class of all languages that are decifable by a polynomial-time-bounded Turing Machine.
+>###### $P$ is the class of all languages that are decidable by a polynomial-time-bounded Turing Machine.
 
 ### Polynomial-Time Church-Turing Thesis
 
@@ -130,7 +130,7 @@ Such a pair $\langle p,q \rangle$ is a _certificate_ that $n$ belongs to COMPOSI
 
 A verifier can efficiently check that $n = pq$.
 
-V: On input $\langle n, \langle p,q \rangle \rangle:
+V: On input $\langle n, \langle p,q \rangle \rangle$:
 1. Multiply $pq$.
 2. If $n = pq$, accept. Otherwise, reject.
 

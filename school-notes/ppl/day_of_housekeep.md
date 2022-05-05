@@ -42,3 +42,15 @@ typecheckExp exp = case exp of
 		return (ETyped (EPlus ae1 ae2) t1,t1)
 ```
 
+---
+---
+
+## Part II
+###### April 4th, 2022
+---
+
+### Homework 5 
+
+Implement a code generator that generates a Java Virtual Machine (JVM) assembly from the typchecked. Create an assembler and what not.
+
+Stack based thingy.

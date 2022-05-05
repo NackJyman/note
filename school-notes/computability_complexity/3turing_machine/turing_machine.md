@@ -104,7 +104,7 @@ The computation continues until the TM enters the accept state or the reject sta
 
 ---
 
-A configuration of a TM consists of the current state, the current tape contents, and the current tape head location. A configuration is often represented in the form $$uqv$$ where $u, v \in \gamma^*$ and $q \in Q$, meaning that 
+A _configuration_ of a TM consists of the current state, the current tape contents, and the current tape head location. A configuration is often represented in the form $$uqv$$ where $u, v \in \Gamma^*$ and $q \in Q$, meaning that 
 - the current state is $q$ 
 - $uv$ is the tape contents 
 - the tape head is pointing to the first symbol of $v$
@@ -112,25 +112,26 @@ A configuration of a TM consists of the current state, the current tape contents
 ---
 
 Let $M = (Q, \Sigma, \Gamma, \delta, q_0, q_{accept}, q_{reject})$ be a TM. 
-- The start configuration of M on input $w \in \Sigma^*$ is the configuration q0w. 
+- The start configuration of $M$ on input $w \in \Sigma^*$ is the configuration $q_0w$. 
 - In an accepting configuration the state is $q_{accept}$.
 - In a rejecting configuration the state is $q_{reject}$.
 - Accepting and rejecting configurations are called halting configurations
 
-We say that _M accepts w_ if there exists a sequence of configurations $C_1, . \ . \ , C_k$ where
+We say that _$M$ accepts $w$_ if there exists a sequence of configurations $C_1, . \ . \ , C_k$ where
 1. $C_1$ is the initial configuration of $M$ on $w$. 
 2. each $C_i$ yields $C_{i+1}$ via the transition function $\delta$ in one step.
 3. $C_k$ is an accepting configuration.
 
-The language of $M$ is $$L(M) = {w \in \Sigma^* | M \text{ accepts } w}$$ 
+The language of $M$ is $$L(M) = \{w \in \Sigma^* \ | \ M \text{ accepts } w\}$$ 
 
 We say that $L(M)$ is the language recognized by $M$
+
 >
 ---
 >#### Definition
 >###### A language is _Turing-Recognizable_ if some Turing machine recognizes it. That is, $B \subseteq \Sigma^*$ is Turing-recognizable if $B = L(M)$ for some Turing machine $M$.
 
-On an input w, a TM M has three possible outcomes: 
+On an input $w$, a TM $M$ has three possible outcomes: 
 - accept 
 - reject 
 - never halt 
@@ -161,3 +162,103 @@ _Recursive is also used for this concept_
 
 ##### Multitape Turing Machines:
 
+- $k$ tapes, for some $k \ge 2$
+- transition function:
+
+$$\delta: Q \times\Gamma^k \rightarrow Q \times \Gamma^k \times \{ L,R \}^k$$
+
+If $\delta(q,a_1,...,a_k) = (p,b_1,...,b_k,D_1,...,D_k)$, then when the TM is in state $a$ and the $k$ tape heads are reading $a_1, ... , a_k$, the symbols $b_1, ... , b_k$ are written on each of the tapes and the heads are moved in directions $D_1,... D_k$.
+
+###### Every multitape Turing machine has an equivalent single-tape Turing machine.
+
+##### Nondeterministic Turing Machines (NTMs)
+
+-	Transition function
+
+$$\delta : Q \times \Gamma \rightarrow P(Q \times \Gamma \times \{ L,R\})$$
+
+>#### Theorem
+>###### Every NTM has an equivalent deterministic TM.
+
+###### Proof:
+
+Let $N$ be an NTM. The idea is to do a breadth-first search on $N$'s computation tree. We will design a 3-tape deterministic TM $D$ for this.
+
+- Input tape; contains the input; is never altered.
+- Simulation Tape: copy of N's tape on some branch of it's computation tree.
+- Address Tape: used to keep track of D's location N's computation tree
+- On Tape 3 (The address Tape), we use the alphabet $\Sigma_b = \{1,...,b \}$, where $b$ is the size of the largest set of possible choices in $N$'s transition function.
+- Every node in $N$'s computation tree is given an address that is a string in $\Sigma^*_b$.
+- For ecample, address 231 identifies the node we get by taking the $2^{nd}$ nondeterministic choice, then the $3^{rd}$ choice, and lastly thr $1^{st}$ choice.
+- Some addresses may not correspond to nodes.
+
+**Description of deterministic TM $D$ to simulate $N$**
+1. Initially, tape 1 contains the input $w$.
+2. Copy tape 1 to tape 2.
+3. Use tape 2 to simulate $N$ with input $w$ on one branch of its nondeterministic omputation. Before each step of $N$, consult the next symbol on tape 3 to determine which nondeterministic choice to make.
+ 	- If no more symbols remain on tape 3 or this is not a valid choice, abort this branch and go to step 4. 
+ 	- Also go to step 4 if this choice leads to a rejecting configuration. 
+ 	- If this choice leads to an accepting configuration, ACCEPT.
+4. Replace the string on tape 3 with lexicographically next string. Go to step 2.
+
+Suppose $N$ accepts $w$.Then there is some sequence of nondeterministic choices that leads $N$ to an accepting state. Consider the lexicographically least sequence of such choices and let $a \in \Sigma^* b$ be its address. Eventually a will be on **tape 3** and $D$ will accept. 
+
+Now suppose that $N$ does not accept $w$. Then no sequence of nondeterministic choices leads to an accepting configuration. This means $D$ will never accept (in fact, $D$ will run forever). 
+
+Therefore $L(D) = L(N)$.
+
+---
+
+>#### Theorem
+>###### Every NTM has an equivalent deterministic TM.
+
+**Corollary**
+
+A language is Turing-recognizable if only if some NTM recognizes it.
+
+##### Enumerators
+
+An _enumerator_ is a TM with a second output tape, which we may conceptualize as a printer
+
+An enumerator $E$ starts out with an empty tape. As it computes, it may print a string from time to time. If it runs forever, it may print an infinite list of strings.
+
+The _Language enumerated_ by $E$ is the collection of strings that it prints. The strings may be printed in any order, possibly with repetitions.
+
+>#### Theorem
+>###### A language is Turing-recognizable if and only if some enumerator enumerates it.
+
+##### Proof:
+
+...
+
+### Quantifiers, Predicatesm, and Recogizability
+
+Another way to define Turing-recognizability is in terms of existential queantifiers and decidable predicates.
+
+>#### Theorem 
+>###### A _language_ $A$ is Turing-recognizable if and only if there is a decidable language $D$ such that for all $w \in \Sigma^*$, $$x \in A \iff (\exists w \in \Sigma^*) \langle x,w \rangle \in D$$
+
+- A string $w$ with $\langle x,w \rangle \in D$ is a _witness_ that $x \in A$
+- We will use quantifiers, predicates, and witnessess again later when we study the complexity class NP.
+
+##### Proof:
+
+...
+
+## Summary
+
+The following names for Turing-recognizability are equivalent: 
+- A is Turing-recognizable 
+- A is computably enumerable (c.e.) 
+- A is recursively enumerable (r.e.) 
+
+The following definitions for Turing-recognizability are equivalent: 
+- A is recognized by a TM 
+- A is recognized by a multitape TM 
+- A is recognized by an NTM 
+- A is enumerated by an enumerator 
+- A is definable with an existential quantifer and a decidable predicate
+
+---
+
+### End of Lecture

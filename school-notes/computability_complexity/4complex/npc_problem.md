@@ -10,11 +10,24 @@
 
 Two Implications:
 
-...
+$$\begin{array}{rcl}
+w \in A & \Rightarrow & f(w) \in B \\
+f(w) \in B & \Rightarrow & w \in A \\
+\end{array}$$
+
+or equivalently:
+
+$$\begin{array}{rcl}
+w \in A & \Rightarrow & f(w) \in B \\
+w \not \in A & \Rightarrow & f(w) \not \in B \\
+\end{array}$$
 
 ### NP-Completeness
 
-...
+>#### Definition
+>###### A Problem $B$ is NP-Complete if 
+>###### 1. $B$ is in NP, and
+>###### 2. Every $A$ in NP is $\le_P$-reducible to $B$
 
 >#### Theorem
 >###### The following are equivalent
@@ -24,7 +37,9 @@ Two Implications:
 
 ##### Proof: 
 
-...
+$3 \Rightarrow 2$ and $2 \Rightarrow 1$ are trivial.
+
+To see $1 \Rightarrow 3$, assume 
 
 >#### Corollary
 >###### The following are equivalent
@@ -271,7 +286,7 @@ A tour of the $n$ cities is a sequence $(a_1,..., a_n, a_{n+1})$ where
 
 The cost of the tour is
 
-$$\SIGMA$$
+$$\Sigma$$
 
 Sometimes this is also called the length of the tour.
 
@@ -292,6 +307,41 @@ In the TSP decision problem, we only have to decide of a tour with cost at most 
 >###### If $P \not = NP$, then there is no polynomial-time algorithm that finds shortest TSP tours.
 
 ##### Proof:
+
+...
+
+---
+
+### Subset Sum
+
+>#### Theorem
+>###### $SUBSET-SUM$ is NP-complete.
+
+##### Proof:
+
+...
+
+#### Example Usage:
+
+...
+_slide 74_
+...
+
+##### Proof (again?):
+
+...
+
+$\tau$
+
+###### "A couple of for-loops" - John Hitchcock
+---
+
+### NP-Complete Summary
+
+Let us review the method of showing a problme $B$ is NP-complete. 
+1. Show that $B \in NP$. It is usually easy to show this, but it is a step that shouldn't be overlooked.
+2. Choose some NP-Complete problem $A$ that is a candidate for reduction to $B$. Oftwen we try to find a problme that is similar to $B$ or use $3SAT$.
+3. Reduce $A$ to $B$.
 
 ...
 

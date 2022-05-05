@@ -25,7 +25,6 @@ Some countable set:
 - $L(M)$ for any Turing machine $M$
 - $\{ M \ | \ M \text{ is a Turing Machine}\}$
 
----
 >#### Theorem (Cantor, 1874)
 >###### The set of real numbers R is uncountable
 
@@ -46,6 +45,7 @@ $$ e_i= \left\{ \begin{array}{rcl} 0 & \text{ if } d_i^i \not = 0 \\
 1 & \text{ if } d_i^i = 0 \end{array}\right\}$$
 
 Then for all $i, e_i \not = d_i^i$. Therefore $x \not = f(i)$ for all $i$, so $f$ is not onto.
+$\boxdot$
 
 *Use this technique with Turing Machines*
 
@@ -62,9 +62,10 @@ $$A_{TM} = \{ \langle M,w \rangle \ | \ M \text{ is a TM that accepts input stri
 ##### Proof:
 
 The following algorithm recognizes $A_{TM}$. 
-Algorithm U: On input $\langle M,w \rangle$, where $M$ is a TM and $w$ is a string: 
-1. Simulate M on w. 
-2. If M ever enters an accept state, accept. If M ever enters a reject state, reject.
+>Algorithm U: 
+>On input $\langle M,w \rangle$, where $M$ is a TM and $w$ is a string: 
+>1. Simulate M on w. 
+>2. If M ever enters an accept state, accept. If M ever enters a reject state, reject.
  
 If M does not halt on w, then U will not halt. This is why U does not decide $A_{TM}$
 
