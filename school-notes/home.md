@@ -2,6 +2,22 @@
 ###### or i guess "*vault*"
 ---
 
+# Fall Semester, 2022
+
+- #### [[osd_Introduction | Operating Systems Design]]
+
+- #### [[cn_Introduction | Computer Networks]]
+
+- #### Mobile Programming
+
+- #### Intro to Math Modeling
+
+- #### Computer Graphics
+
+- #### Senior Design 
+
+
+
 # Spring Semester, 2022
 
 
